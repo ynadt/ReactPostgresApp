@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { login } from '../api/auth';
 import { useAuth } from '../context/AuthContext';
+import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { Spinner } from 'react-bootstrap';
 import ApiError from '../types/ApiError';
+
 
 const LoginPage: React.FC = () => {
   const [email, setEmail] = useState<string>('');
@@ -97,9 +99,9 @@ const LoginPage: React.FC = () => {
               </div>
               <p className="m-0 text-secondary text-center">
                 Don&#39;t have an account?{' '}
-                <a href="/register" className="link-primary text-decoration-none">
+                <Link to="/register" className="link-primary text-decoration-none">
                   Sign up
-                </a>
+                </Link>
               </p>
             </form>
           </div>
